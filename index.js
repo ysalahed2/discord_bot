@@ -13,6 +13,8 @@ bot.on('message', message => {
         message.channel.send('tbh i don\'t know but definitely machi rajel :)');
     }else if (message.content.startsWith(`${prefix}hey`)) {       
         message.channel.send('Hey smit sidi');
+    }else if (message.content.startsWith(`${prefix}tebi`)) {       
+        message.channel.send('give it to me pls');
     }
 });
 
