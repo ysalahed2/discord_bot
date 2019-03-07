@@ -1,18 +1,25 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const prefix = process.env.prefiix;
-client.once('ready', () => {
-    console.log('Ready!')
-})
 
+const Discord = require("discord.js");
+const bot = new Discord.Client({disableEveryone: true});
 
-client.on('message', message => {
-	if (message.content.startsWith(`${prefix}QwertyWahtsUrGender`)) {       
-        message.channel.send('tbh i don\'t know but definitely machi rajel :)');
-    }else if (message.content.startsWith(`${prefix}hey`)) {       
-        message.channel.send('Hey smit sidi');
-    }
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online!`);
+  bot.user.setActivity(`Hey, Wassup!`);
 });
 
+bot.on("message", async message => {
 
-client.login(process.env.token);
+  if (message.author.bot) return;
+  if (message.channel.type === "dm") return;
+
+  let prefix = '-';
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+  let args = messageArray.slice(1);
+
+  if (cmd === `${prefix}ping`){
+    message.channel.send("Pong!");
+  }
+});
+
+bot.login(process.env.token);
