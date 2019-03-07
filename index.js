@@ -7,7 +7,7 @@ bot.on("ready", async () => {
   bot.user.setActivity(`lastik!`);
 });
 
-client.on('message', message => {
+bot.on('message', message => {
 	if (message.content.startsWith(`${prefix}QwertyWahtsUrGender`)) {       
         message.channel.send('tbh i don\'t know but definitely machi rajel :)');
     }else if (message.content.startsWith(`${prefix}hey`)) {       
