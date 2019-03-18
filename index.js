@@ -18,7 +18,7 @@ client.on('guildMemberAdd', member => {
 client.on('message', message => {
     
     const dev = message.guild.roles.find('name', 'Dev');
-    const normies = message.guild.roles.find('name', 'Normies');
+    const normies = message.guild.roles.find('name', 'Nomies');
     const Mod = message.guild.roles.find('name', 'Mod');
     const Admin = message.guild.roles.find('name', 'Admin');
 
